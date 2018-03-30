@@ -1,0 +1,391 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title></title>
+    <style type="text/css">
+    .search {
+        width: 247px;
+        height: 36px;
+        line-height: 36px;
+        border: 1px solid #e5e6e7;
+        outline: none;
+        font-size: 14px;
+        color: #999999;
+        text-indent: 10px;
+        float: left;
+    }
+
+    .searchbg {
+        width: 500px;
+        margin: 50px auto;
+        border: 1px solid #e4e4e4;
+        padding: 10px;
+        height: 1200px;
+    }
+
+    .sure {
+        width: 70px;
+        height: 40px;
+        line-height: 38px;
+        text-indent: 20px;
+        background: url(buttonbg.png) no-repeat;
+        border: none;
+        font-size: 14px;
+        color: #ffffff;
+        float: left;
+        outline: none;
+    }
+
+    .table-list {
+        width: 100%;
+        margin-top: 10px;
+        border: 1px solid #e8e8e8;
+        border-bottom: none;
+    }
+
+    .table-list td {
+
+        border-right: 1px solid #e7e7e7;
+    }
+
+    .table-list th {
+        border-right: 1px solid #e7e7e7;
+        font-weight: normal!important;
+    }
+
+    .table-list th td {
+        font-size: 14px;
+        color: #333333;
+        font-weight: normal!important;
+    }
+
+    .table-list tbody td {
+        text-align: justify;
+        font-size: 14px;
+        padding: 15px 1px;
+        border-bottom: 1px solid #e8e8e8;
+    }
+
+    .table-list {
+        display: none;
+    }
+
+    .table-list thead tr {
+        background: #f3f7fa;
+        height: 50px;
+    }
+
+    .table-list tbody tr {
+        cursor: pointer;
+    }
+
+    .table-list tbody tr.active {
+        background: #f9f9f9;
+    }
+
+    .tablelist {
+        width: 100%;
+        margin-top: 10px;
+        border: 1px solid #e8e8e8;
+        border-bottom: none;
+        position: absolute;
+        left: 0px;
+        display: none;
+        background:#ffffff;
+        z-index:20000;
+    }
+
+    .tablelist td {
+        border-right: 1px solid #e7e7e7;
+    }
+
+    .tablelist th {
+        border-right: 1px solid #e7e7e7;
+        font-weight: normal!important;
+        text-align: center;
+    }
+
+    .tablelist th td {
+        font-size: 14px;
+        color: #333333;
+        font-weight: normal!important;
+    }
+
+    .tablelist tbody td {
+        text-align: justify;
+        font-size: 14px;
+        padding: 15px 1px;
+        border-bottom: 1px solid #e8e8e8;
+    }
+
+    .tablelist thead tr {
+        background: #f3f7fa;
+        height: 50px;
+    }
+
+    .tablelist tbody tr {
+        cursor: pointer;
+    }
+
+    .tablelist tbody tr.active {
+        background: #f9f9f9;
+    }
+
+    .choicebg span {
+        display: inline-block;
+        border: 1px dashed #d5d5d5;
+        padding: 15px 10px;
+        margin: 20px 20px 0 0;
+        font-size: 16px;
+        color: #666666;
+        text-align: left;
+    }
+
+    .close {
+        display: inline-block;
+        position: absolute;
+        top: -20px;
+        right: -20px;
+        color: #56B28F;
+        font-weight: bold;
+        font-size: 16px;
+        cursor: pointer;
+    }
+
+    .choicebg {
+        display: none;
+    }
+    /* 清除浮动 */
+
+    .clearfix {
+        *zoom: 1;
+        /*IE/7/6*/
+    }
+
+    .clearfix:after {
+        content: "\200B";
+        display: block;
+        height: 0;
+        clear: both;
+    }
+
+    .choicebg span:hover {
+        background: #eeeeee;
+    }
+
+    .upperDetail {
+        position: absolute;
+        top: 0;
+        left: 5px;
+        width: 480px;
+    }
+
+    .search-bg {
+        position: relative;
+        width: 100%;
+        height: 100%;
+    }
+
+    .detail-bg {
+        position: absolute;
+        top: 200px;
+        left: 10px;
+        /* display: none; */
+    }
+
+    .closebg {
+        width: 100%;
+        height: 100%;
+        position: relative;
+        cursor: pointer;
+    }
+    </style>
+
+    <body>
+        <div class="searchbg">
+            <div class="search-bg">
+                <div class="select-bg clearfix">
+                    <input class="search" placeholder="请在这里输入用户名">
+                    <input type="button" value="确认" class="sure">
+                </div>
+                <div class="choicebg">
+                </div>
+                <table cellspacing="0" class="table-list">
+                    <thead>
+                        <tr>
+                            <th>商品名</th>
+                            <th>通用名</th>
+                            <th>规格</th>
+                            <th width="80px">生产厂商</th>
+                            <th width="80px">批准文号</th>
+                            <th>编码</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>[曼秀雷敦]什果冰小小润唇膏(柠檬 SPF15/PA)</td>
+                            <td> [曼秀雷敦]什果冰小小润唇膏(柠檬 SPF15/PA)</td>
+                            <td>1双(M2150A-AD 露趾 2-M)</td>
+                            <td>南京正科医药股份有限公司</td>
+                            <td>国药准字H20052493</td>
+                            <td style="border-right:none!important;">2000030018059</td>
+                        </tr>
+                        <tr>
+                            <td>[曼秀</td>
+                            <td> [曼秀雷敦]什果冰小小润唇膏(柠檬 SPF15/PA)</td>
+                            <td>1双(M2150A-AD 露趾 2-M)</td>
+                            <td>南京正科医药股份有限公司</td>
+                            <td>国药准字H20052493</td>
+                            <td style="border-right:none!important;">2000030018059</td>
+                        </tr>
+                        <tr>
+                            <td>花花润唇膏</td>
+                            <td> [曼秀雷敦]什果冰小小润唇膏(柠檬 SPF15/PA)</td>
+                            <td>1双(M2150A-AD 露趾 2-M)</td>
+                            <td>南京正科医药股份有限公司</td>
+                            <td>国药准字H20052493</td>
+                            <td style="border-right:none!important;">2000030018059</td>
+                        </tr>
+                        <tr>
+                            <td>洒洒水</td>
+                            <td> [曼秀雷敦]什果冰小小润唇膏(柠檬 SPF15/PA)</td>
+                            <td>1双(M2150A-AD 露趾 2-M)</td>
+                            <td>南京正科医药股份有限公司</td>
+                            <td>国药准字H20052493</td>
+                            <td style="border-right:none!important;">2000030018059</td>
+                        </tr>
+                        <tr>
+                            <td>洒洒水</td>
+                            <td> [曼秀雷敦]什果冰小小润唇膏(柠檬 SPF15/PA)</td>
+                            <td>1双(M2150A-AD 露趾 2-M)</td>
+                            <td>南京正科医药股份有限公司</td>
+                            <td>国药准字H20052493</td>
+                            <td style="border-right:none!important;">2000030018059</td>
+                        </tr>
+                        <tr>
+                            <td>花花护手霜</td>
+                            <td> [曼秀雷敦]什果冰小小润唇膏(柠檬 SPF15/PA)</td>
+                            <td>1双(M2150A-AD 露趾 2-M)</td>
+                            <td>南京正科医药股份有限公司</td>
+                            <td>国药准字H20052493</td>
+                            <td style="border-right:none!important;">2000030018059</td>
+                        </tr>
+                        <tr>
+                            <td>花花护手霜</td>
+                            <td> [曼秀雷敦]什果冰小小润唇膏(柠檬 SPF15/PA)</td>
+                            <td>1双(M2150A-AD 露趾 2-M)</td>
+                            <td>南京正科医药股份有限公司</td>
+                            <td>国药准字H20052493</td>
+                            <td style="border-right:none!important;">2000030018059</td>
+                        </tr>
+                        <tr>
+                            <td>花花护手霜</td>
+                            <td> [曼秀雷敦]什果冰小小润唇膏(柠檬 SPF15/PA)</td>
+                            <td>1双(M2150A-AD 露趾 2-M)</td>
+                            <td>南京正科医药股份有限公司</td>
+                            <td>国药准字H20052493</td>
+                            <td style="border-right:none!important;">2000030018059</td>
+                        </tr>
+                        <tr>
+                            <td>花花护手霜</td>
+                            <td> [曼秀雷敦]什果冰小小润唇膏(柠檬 SPF15/PA)</td>
+                            <td>1双(M2150A-AD 露趾 2-M)</td>
+                            <td>南京正科医药股份有限公司</td>
+                            <td>国药准字H20052493</td>
+                            <td style="border-right:none!important;">2000030018059</td>
+                        </tr>
+                        <tr>
+                            <td>花花护手霜</td>
+                            <td> [曼秀雷敦]什果冰小小润唇膏(柠檬 SPF15/PA)</td>
+                            <td>1双(M2150A-AD 露趾 2-M)</td>
+                            <td>南京正科医药股份有限公司</td>
+                            <td>国药准字H20052493</td>
+                            <td style="border-right:none!important;">2000030018059</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="detail-bg">
+                </div>
+                <!--  detail-bg end -->
+            </div>
+            <!--search-bg end -->
+        </div>
+        <!-- searchbg end -->
+        <script src="jquery-1.11.0.min.js"></script>
+        <script type="text/javascript">
+        $(function() {
+            $(".search").focus(function() {
+                $(".table-list").show();
+                $(".choicebg").hide();
+            });
+            //table表格选择
+            $("tbody>tr").click(function() {
+                $(".choicebg").hide();
+                var aId = $(this).index();
+
+                if ($(this).hasClass("active")) {
+                    $(".item" + aId + "").remove();
+                    $(this).removeClass("active");
+                } else {
+                    var name = $(this).children('td:eq(0)');
+                    var name2 = $(this).children('td:eq(1)');
+                    var name3 = $(this).children('td:eq(2)');
+                    var name4 = $(this).children('td:eq(3)');
+                    var name5 = $(this).children('td:eq(4)');
+                    var name6 = $(this).children('td:eq(5)');
+
+                    $(this).addClass("active");
+                    var tactive = "tactive" + aId;
+                    $(this).addClass(tactive);
+                    var html = "<span  class='item" + aId + "'>";
+                    html += "<div class='closebg'><a class='close'><img src='close.png' height='16' width='16'></a></div>";
+                    html += name.text();
+                    html += "<table cellspacing='0' class='tablelist'>";
+                    html += "<thead><tr><th  width='87px'>商品名</th><th>通用名</th> <th>规格</th>";
+                    html += "<th width='80 px'>生产厂商</th>";
+                    html += "<th width='80 px'>批准文号</th><th>编码</th></tr></thead>";
+                    html += "<tbody><tr>";
+                    html += "<td>" + name.text(); + "</td>";
+                    html += "<td>" + name2.text(); + "</td>";
+                    html += "<td>" + name3.text(); + "</td>";
+                    html += "<td>" + name4.text(); + "</td>";
+                    html += "<td>" + name5.text(); + "</td>";
+                    html += "<td>" + name6.text(); + "</td>";
+                    html += "</tr> </tbody> </table>";
+                    html += "</span>";
+                    $(".choicebg").append(html);
+              /*      spanbg = $(this).parents('table').siblings(".choicebg").find("span").position();
+                    var h= spanbg.top;
+                    console.log(h);
+*/
+                    $(".item" + aId + "").hover(function() {
+                        $(this).find("table").show();
+                        /* $(this).find("table").css("top","70");*/
+
+                    }, function() {
+                        $(this).find("table").hide();
+                    });
+                    //选中选项卡显示详细内容
+                    //关闭选项卡
+                    $(".close").click(function() {
+                        $(this).parent().parent().remove();
+                        $(".tactive" + aId + "").removeClass("active");
+                    });
+                };
+
+            });
+            //选择列表隐藏
+            $(".sure").click(function() {
+                $(".table-list").hide();
+                $(".choicebg").show();
+            })
+            $("thead>tr>th:last").css("border-right", "none");
+        });
+        </script>
+    </body>
+
+</html>
